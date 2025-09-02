@@ -1,0 +1,33 @@
+[package]
+name = "plux-lua-manager"
+version = "0.1.0"
+edition = "2024"
+description = "Lua plugin manager for the Plux"
+repository = "https://github.com/BleynChannel/plux-lua-manager"
+license = "MIT"
+keywords = ["plux", "lua", "plugin", "manager"]
+categories = ["api-bindings", "development-tools"]
+
+[features]
+default = ["lua54"]
+lua54 = ["mlua/lua54"]
+lua53 = ["mlua/lua53"]
+lua52 = ["mlua/lua52"]
+lua51 = ["mlua/lua51"]
+
+[dependencies]
+# Core dependencies
+plux = { git = "https://github.com/BleynChannel/plux-rs.git", branch = "master" }
+
+# Lua integration
+mlua = { version = "0.11.3", features = ["vendored", "send", "serialize"] }
+
+# Configuration
+toml = "0.9.5"
+semver = { version = "1.0.26", features = ["serde"] }
+
+# Utilities
+hashbrown = { version = "0.16.0", features = ["serde"] }
+log = "0.4.20"
+serde = { version = "1.0.219", features = ["derive"] }
+thiserror = "2.0.16"
