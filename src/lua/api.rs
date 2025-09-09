@@ -3,7 +3,7 @@
 use std::sync::Arc;
 
 use mlua::{Lua, MultiValue, Table, Value};
-use plux::{function::FunctionOutput, Api, StdInfo};
+use plux_rs::{function::FunctionOutput, Api, StdInfo};
 use semver::Version;
 
 use crate::error::ManagerError;

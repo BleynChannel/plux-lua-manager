@@ -47,7 +47,7 @@ pub enum PluginError {
 
     /// An error occurred while registering plugin functions.
     #[error("Plugin register function error: {0}")]
-    RegisterFunctionError(#[from] plux::utils::PluginRegisterFunctionError),
+    RegisterFunctionError(#[from] plux_rs::utils::PluginRegisterFunctionError),
 }
 
 /// The top-level error type for the Lua manager.

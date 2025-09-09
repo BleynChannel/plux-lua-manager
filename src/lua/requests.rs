@@ -3,7 +3,7 @@
 use std::sync::{Arc, Mutex};
 
 use mlua::{Lua, MultiValue, Value};
-use plux::{
+use plux_rs::{
     Requests,
     function::{Arg, DynamicFunction, Request},
 };

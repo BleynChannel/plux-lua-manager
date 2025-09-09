@@ -1,7 +1,7 @@
 //! Core plugin manager implementation for Lua plugins.
 //!
 //! This module provides the main [`LuaManager`] type which implements the `Manager`
-//! trait from the `plux` crate, enabling the loading, management, and execution
+//! trait from the `plux-rs` crate, enabling the loading, management, and execution
 //! of Lua plugins in a safe and controlled environment.
 //!
 //! # Features
@@ -36,7 +36,7 @@ use std::{
 use hashbrown::HashMap;
 use log;
 use mlua::{Function, Lua, MultiValue, Table, Value};
-use plux::{
+use plux_rs::{
     Api, Bundle, Manager, Plugin, StdInfo,
     context::LoadPluginContext,
     function::{Arg, DynamicFunction, FunctionOutput},
@@ -80,7 +80,7 @@ impl LuaManager {
     /// # Examples
     ///
     /// ```
-    /// use plux_lua_manager::prelude::LuaManager;
+    /// use plux_lua_manager::LuaManager;
     ///
     /// let manager = LuaManager::new();
     /// ```
@@ -172,7 +172,7 @@ impl<'a> Manager<'a, FunctionOutput, StdInfo> for LuaManager {
     }
 
     /// Registers a new plugin.
-    fn register_plugin(&mut self, context: plux::RegisterPluginContext) -> ManagerResult<StdInfo> {
+    fn register_plugin(&mut self, context: plux_rs::RegisterPluginContext) -> ManagerResult<StdInfo> {
         let (_, info) = load_config(&context.path).map_err(|e| ManagerError::Config(e))?;
 
         log::info!("Registering plugin: {}", context.bundle);

@@ -1,7 +1,7 @@
 //! Type conversion between Lua and Rust types
 
 use mlua::{IntoLua, Lua, Value};
-use plux::variable::Variable;
+use plux_rs::variable::Variable;
 
 /// Converts a Lua value to a Rust Variable
 pub fn lua_to_plux(lua_value: &Value) -> mlua::Result<Variable> {

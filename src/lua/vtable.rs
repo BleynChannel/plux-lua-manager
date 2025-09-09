@@ -1,7 +1,7 @@
 //! Vtable handling for Lua plugins
 
 use mlua::{Lua, MultiValue, Value};
-use plux::{Registry, function::FunctionOutput};
+use plux_rs::{Registry, function::FunctionOutput};
 
 use crate::{
     error::ManagerError,

@@ -173,9 +173,9 @@ dependencies = [
 
 [[package]]
 name = "log"
-version = "0.4.27"
+version = "0.4.28"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "13dc2df351e3202783a1fe0d44375f7295ffb4049267b0f3018346dc122a1d94"
+checksum = "34080505efa8e45a4b816c349525ebe327ceaa8559756f0356cba97ef3bf7432"
 
 [[package]]
 name = "lua-src"
@@ -281,28 +281,29 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7edddbd0b52d732b21ad9a5fab5c704c14cd949e5e9a1ec5929a24fded1b904c"
 
 [[package]]
-name = "plux"
-version = "1.0.0-alpha.3"
-source = "git+https://github.com/BleynChannel/plux-rs.git?branch=master#b72a8072f14e6dfc4a6f2f276d0b62ff5af34aa6"
-dependencies = [
- "rayon",
- "semver",
- "serde",
- "thiserror",
-]
-
-[[package]]
 name = "plux-lua-manager"
 version = "0.1.0"
 dependencies = [
  "hashbrown 0.16.0",
  "log",
  "mlua",
- "plux",
+ "plux-rs",
  "semver",
  "serde",
  "thiserror",
  "toml",
+]
+
+[[package]]
+name = "plux-rs"
+version = "1.0.0-pre.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "5df41d464a08fdcbb1d7cad80b858c34ae11e9e19ca01ca665885d8cbb54103f"
+dependencies = [
+ "rayon",
+ "semver",
+ "serde",
+ "thiserror",
 ]
 
 [[package]]

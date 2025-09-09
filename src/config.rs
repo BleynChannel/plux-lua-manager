@@ -22,7 +22,7 @@
 
 use std::{collections::HashMap, path::PathBuf};
 
-use plux::{Depend, StdInfo};
+use plux_rs::{Depend, StdInfo};
 use semver::VersionReq;
 use serde::{Deserialize, Serialize};
 
