@@ -4,7 +4,7 @@
 [![Documentation](https://docs.rs/plux-lua-manager/badge.svg)](https://docs.rs/plux-lua-manager)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-A high-performance Lua plugin manager for Plux, providing a safe and efficient way to load, manage, and interact with Lua plugins.
+A high-performance Lua plugin manager for [Plux](https://crates.io/crates/plux-rs), providing a safe and efficient way to load, manage, and interact with Lua plugins.
 
 ## Installation
 
@@ -12,8 +12,8 @@ Add to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-plux = { git = "https://github.com/BleynChannel/plux-rs.git", branch = "master" }
-plux-lua-manager = { git = "https://github.com/BleynChannel/plux-lua-manager", branch = "master" }
+plux-rs = { version = "1.0.0-pre.1", features = ["derive"] }
+plux-lua-manager = "0.1.0"
 ```
 
 ## Features
@@ -28,22 +28,22 @@ The crate supports different Lua versions through feature flags:
 ## Quick Start
 
 ```rust
-use plux::{function::Request, Loader};
+use plux_rs::{Loader, function::Request};
 use plux_lua_manager::prelude::*;
 
 // Declaring a function for lua plugin
-#[plux::function]
+#[plux_rs::function]
 fn add(_: (), a: &i32, b: &i32) -> i32 {
     a + b
 }
 
 // Declaring a function for lua plugin
-#[plux::function]
+#[plux_rs::function]
 fn sub(_: (), a: &i32, b: &i32) -> i32 {
     a - b
 }
 
-fn main() -> anyhow::Result<()> {
+fn main() {
     let mut loader = Loader::new();
     loader.context(move |mut ctx| {
         // Registering functions for lua plugin
@@ -52,23 +52,19 @@ fn main() -> anyhow::Result<()> {
 
         // Registering a entrypoint for lua plugin
         ctx.register_request(Request::new("main".to_string(), vec![], None));
-        
+
         // Registering the manager
         ctx.register_manager(LuaManager::new()).unwrap();
     });
 
     // Loading a plugin
     let plugin = loader
-        .load_plugin_now(
-            get_plugin_path("example", "0.1.0", "lua") // Plugin bundle is 'example-v0.1.0.lua'
-                .to_str()
-                .unwrap(),
-        )
+        .load_plugin_now("my_plugin-v0.1.0.lua")
         .map(|bundle| loader.get_plugin_by_bundle(&bundle).unwrap())
         .unwrap();
 
     // Calling the 'main' request
-    plugin.call_request("main", &[])
+    plugin.call_request("main", &[]).unwrap().unwrap();
 }
 ```
 

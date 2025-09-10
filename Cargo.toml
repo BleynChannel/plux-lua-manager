@@ -1,12 +1,15 @@
 [package]
 name = "plux-lua-manager"
-version = "0.1.0"
-edition = "2024"
 description = "Lua plugin manager for the Plux"
-repository = "https://github.com/BleynChannel/plux-lua-manager"
+version = "0.1.0"
+authors = ["Bleyn"]
 license = "MIT"
+homepage = "https://github.com/BleynChannel/plux-lua-manager"
+repository = "https://github.com/BleynChannel/plux-lua-manager"
+readme = "README.md"
 keywords = ["plux", "lua", "plugin", "manager"]
 categories = ["api-bindings", "development-tools"]
+edition = "2024"
 
 [features]
 default = ["lua54"]
