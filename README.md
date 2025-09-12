@@ -12,8 +12,8 @@ Add to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-plux-rs = { version = "1.0.0-pre.1", features = ["derive"] }
-plux-lua-manager = "0.1.0"
+plux-rs = { version = "1.0.0", features = ["derive"] }
+plux-lua-manager = "0.1.1"
 ```
 
 ## Features
