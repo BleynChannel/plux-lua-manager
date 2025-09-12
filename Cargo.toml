@@ -1,6 +1,6 @@
 [package]
 name = "plux-lua-manager"
-description = "Lua plugin manager for the Plux"
+description = "Lua plugin manager for Plux"
 version = "0.1.0"
 authors = ["Bleyn"]
 license = "MIT"
@@ -20,7 +20,7 @@ lua51 = ["mlua/lua51"]
 
 [dependencies]
 # Core dependencies
-plux-rs = "1.0.0-pre.1"
+plux-rs = "1.0.0"
 
 # Lua integration
 mlua = { version = "0.11.3", features = ["vendored", "send", "serialize"] }

@@ -96,7 +96,7 @@ other_plugin = "^1.0.0"
 optional_feature = "^2.0.0"
 ```
 
-### 'main.lua' Example
+### `main.lua` Example
 
 ```lua
 -- Declaring a function for Plux
