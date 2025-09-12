@@ -1,7 +1,7 @@
 [package]
 name = "plux-lua-manager"
 description = "Lua plugin manager for Plux"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Bleyn"]
 license = "MIT"
 homepage = "https://github.com/BleynChannel/plux-lua-manager"
