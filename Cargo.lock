@@ -541,9 +541,9 @@ checksum = "7edddbd0b52d732b21ad9a5fab5c704c14cd949e5e9a1ec5929a24fded1b904c"
 
 [[package]]
 name = "plux-codegen"
-version = "0.2.2"
+version = "0.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9394683df416d448c013d63ce11ea4f41d09a6adadc040b06558f16f82ff3bf3"
+checksum = "d9f161e79d9fabb3f23aa2d1b4a7d35850ccc76a493a3f68eebf9b2ac638333f"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -552,7 +552,7 @@ dependencies = [
 
 [[package]]
 name = "plux-lua-manager"
-version = "0.1.1"
+version = "0.1.2"
 dependencies = [
  "hashbrown 0.16.0",
  "log",
@@ -566,9 +566,9 @@ dependencies = [
 
 [[package]]
 name = "plux-rs"
-version = "1.0.0"
+version = "1.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "341a336492bbb2bc515a72073a548c8d0569ec908501fb27358db38346eea9a2"
+checksum = "49089d133bf60f17493f1c609cc2c433c4870c7050997780102a41a550521a75"
 dependencies = [
  "plux-codegen",
  "rayon",
@@ -695,10 +695,11 @@ dependencies = [
 
 [[package]]
 name = "serde"
-version = "1.0.219"
+version = "1.0.228"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5f0e2c6ed6606019b4e29e69dbaba95b11854410e5347d525002456dbbb786b6"
+checksum = "9a8e94ea7f378bd32cbbd37198a4a91436180c5bb472411e48b5ec2e2124ae9e"
 dependencies = [
+ "serde_core",
  "serde_derive",
 ]
 
@@ -713,10 +714,19 @@ dependencies = [
 ]
 
 [[package]]
-name = "serde_derive"
-version = "1.0.219"
+name = "serde_core"
+version = "1.0.228"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "5b0276cf7f2c73365f7157c8123c21cd9a50fbbd844757af28ca1f5925fc2a00"
+checksum = "41d385c7d4ca58e59fc732af25c3983b67ac852c1a25000afe1175de458b67ad"
+dependencies = [
+ "serde_derive",
+]
+
+[[package]]
+name = "serde_derive"
+version = "1.0.228"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d540f220d3187173da220f885ab66608367b6574e925011a9353e4badda91d79"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -1124,9 +1134,9 @@ dependencies = [
 
 [[package]]
 name = "zip"
-version = "5.0.1"
+version = "5.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c7bd5b91aa407cb977468d108ca3fede2c992ea44bb1d989e21756749d7dccff"
+checksum = "2f852905151ac8d4d06fdca66520a661c09730a74c6d4e2b0f27b436b382e532"
 dependencies = [
  "aes",
  "arbitrary",
